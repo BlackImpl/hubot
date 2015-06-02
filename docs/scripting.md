@@ -15,13 +15,28 @@ There are three main sources to load scripts from:
 
 ### Community Scripts
 
+There are hundreds of scripts written and maintained by the community. Find them by searching the [NPM registry](https://www.npmjs.com/) for `hubot-scripts <your-search-term>`. For example:
+
+```
+$ npm search hubot-scripts github
+NAME                  DESCRIPTION
+hubot-deployer        Giving Hubot the ability to deploy GitHub repos to PaaS providers hubot hubot-scripts hubot-gith
+hubot-gh-release-pr   A hubot script to create GitHub's PR for release
+hubot-github          Giving Hubot the ability to be a vital member of your github organization
+…
+```
+
 To use community scripts, place the name of the script in the `hubot-scripts.json` file. For example:
 
 ```coffeescript
-["redis-brain.coffee", "shipit.coffee", "whatis.coffee", "<new-script-name>.coffee"]
+["redis-brain.coffee", "shipit.coffee", "whatis.coffee", "hubot-deployer.coffee"]
 ```
 
-(Please check the [script catalog](http://hubot-script-catalog.herokuapp.com) and the [hubot-scripts organization](https://github.com/hubot-scripts) for scripts carefully crafted for you by lots of nice folks)
+The `npm home` command will open a browser window for the homepage of the script, where you can find more information about  configuring and installing the script. For example:
+
+```
+$ npm home hubot-deploy
+```
 
 ### NPM Packages
 
@@ -519,7 +534,7 @@ Using previous examples:
         # rest of code here
 ```
 
-For the second example, it's worth thinking about what messages the user would see. If you have an error handler that replies to the user, you may not need to add a custom message and could send back the error message provided to the `get()` request, but of course it depends on how public you want to be with your exception reporting. 
+For the second example, it's worth thinking about what messages the user would see. If you have an error handler that replies to the user, you may not need to add a custom message and could send back the error message provided to the `get()` request, but of course it depends on how public you want to be with your exception reporting.
 
 ## Documenting Scripts
 
